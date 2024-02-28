@@ -1,0 +1,72 @@
+<p-toast></p-toast>
+<div class="px-2 py-1 md:px-6 lg:px-8">
+    <div class="border-2 border-dashed surface-border border-round surface-card px-0 py-3 mt-5" style="min-height: 10rem">
+        <div class="grid">
+            <div class="col-12 sm:col-3 md:col-6 lg:col-6">
+                <div class="flex flex-wrap align-items-center justify-content-center">                    
+                    <div class="border-round bg-primary-300 w-full h-full p-3 m-3">                        
+                        <p-tree [value]="files" selectionMode="checkbox" class="w-full md:w-30rem " [(selection)]="selectedFiles"
+                            (onNodeExpand)="nodeExpand($event)" (onNodeCollapse)="nodeCollapse($event)" (onNodeSelect)="nodeSelect($event)"(onNodeUnselect)="nodeUnselect($event)"></p-tree>
+                        <!-- <div class="h-full md:h-auto border-round bg-primary font-bold p-3 flex align-items-center justify-content-center"></div>                -->
+                    </div> 
+                </div>
+            </div>
+            <div class="col-12 sm:col-3 md:col-6 lg:col-6">
+                <div class="flex flex-wrap align-items-center justify-content-center">
+                    <div class="border-round bg-primary-300 w-full h-full p-3 m-3">                        
+                        <div class="h-full md:h-auto border-round surface-0 font-bold p-3 flex align-items-center justify-content-center">                                                                                  
+                        <div class="col-12 lg:col-12 px-4 py-4 md:px-6 lg:px-8 surface-50">
+                            <div class="border-bottom-1 pb-3 surface-border">
+                                <span class="text-900 font-medium text-xl">Cotización de Servicios</span>
+                            </div>
+                            <div *ngFor="let servicio of servicios | keyvalue" class="flex flex-column lg:flex-row flex-wrap lg:align-items-center py-1 mt-1 border-bottom-1 surface-border">
+                                <!-- <img src="assets/images/blocks/ecommerce/checkoutform/checkoutform-1-2.png" class="w-8rem h-8rem flex-shrink-0" />  -->
+                                <div class="flex-auto mt-3 md:mt-0 md:ml-3">
+                                    <div class="flex align-items-center justify-content-between mb-1">
+                                        <span class="text-900 font-medium"> {{ +servicio.key + 1}}.- {{servicio.value}}</span>
+                                        <span class="text-900 font-bold">{{ 500 | currency }} </span>
+                                    </div>
+                                    <!-- <div class="text-600 text-sm mb-3"><i>Paquete</i> | Individual</div> -->
+                                    <!-- <div class="flex flex-auto justify-content-between align-items-center">
+                                        <p-inputNumber [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal" inputStyleClass="w-2rem text-center py-2 px-1 border-transparent" [(ngModel)]="quantities[0]" 
+                                        class="border-1 surface-border border-round" decrementButtonClass="p-button-text text-600 hover:text-primary py-1 px-1" [min]="0" incrementButtonClass="p-button-text text-600 hover:text-primary py-1 px-1" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+                                        <button pButton pRipple icon="pi pi-trash" class="p-button-text p-button-rounded"></button>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="py-2 mt-3 border-bottom-1 surface-border">
+                                <div class="p-inputgroup mb-3">
+                                    <input type="text" [(ngModel)]="value1" pInputText placeholder="Código de promoción" class="w-full">         
+                                    <button type="button" pButton pRipple label="Aplicar" [disabled]="!value1"></button>
+                                </div>
+                            </div>
+                            <div class="py-2 mt-3">
+                                <div class="flex justify-content-between align-items-center mb-3">
+                                    <span class="text-900 font-medium">SubTotal</span>
+                                    <span class="text-900">{{ sumaTotal | currency }} </span>
+                                </div>
+                                <div class="flex justify-content-between align-items-center mb-3">
+                                    <span class="text-900 font-medium">IVA</span>
+                                    <span class="text-primary font-bold">{{ sumaTotal * 0.16 | currency}}</span>
+                                </div>
+                                <div class="flex justify-content-between align-items-center mb-3">
+                                    <span class="text-900 font-bold">Total</span>
+                                    <span class="text-900 font-medium text-xl"> {{ sumaTotal * 1.16 | currency }}</span>
+                                </div>
+                            </div>
+                            <div class="py-2 mt-3 bg-yellow-100 flex align-items-center justify-content-center">
+                                <img src="assets/images/blocks/ecommerce/checkoutform/checkoutform-1-3.png" class="mr-2" alt="Country Flag"><span class="text-black-alpha-90 font-medium">La vigencia son 30 días a partir de su creación.</span>                                
+                            </div>
+                            <div class="py-2 mt-3 bg-yellow-100  flex align-items-center justify-content-center">
+                                <p-button label="Abrir" icon="pi pi-check" (onClick)="createPDF('abrir')"></p-button>
+                                <p-button label="Descargar" icon="pi pi-check" (onClick)="createPDF('descargar')"></p-button>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

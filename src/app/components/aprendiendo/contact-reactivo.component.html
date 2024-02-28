@@ -1,0 +1,57 @@
+
+<div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <form (ngSubmit)="onSubmit(contactForm)" [formGroup]="contactForm">
+        <div class="grid">
+                <div class="col-12 md:col-6">
+                    <div class="p-fluid pr-0 md:pr-6">
+                        <div class="field">
+                            <label for="nombre" class="font-medium">Nombre</label>
+                            <input id="nombre" type="text" name="nombre" formControlName="nombre" pInputText class="py-3 px-2 text-lg" autocomplete="off">                          
+                            <small *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.errors?.['required']" class="p-error ml-2">El Nombre es requerido.</small>
+                            <small *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.errors?.['minlength']" class="p-error ml-2">El Nombre debe tener almenos {{ contactForm.get('nombre')?.errors?.['minlength']?.requiredLength}}.</small>
+                        </div>
+                        <div class="field">
+                            <label for="correo" class="font-medium">Correo electrónico</label>
+                            <input id="correo" type="text" name="correo" formControlName="correo" pInputText class="py-3 px-2 text-lg" autocomplete="off">
+                            <small *ngIf="contactForm.get('correo')?.touched && contactForm.get('correo')?.errors?.['required']" class="p-error ml-2">El correo electrónico es requerido.</small>
+                            <small *ngIf="contactForm.get('correo')?.touched && contactForm.get('correo')?.errors?.['email']" class="p-error ml-2">El correo elecrónico debe ser válido.</small> 
+                        </div>
+                        <div class="field">
+                            <label for="compania" class="font-medium">Compañía</label>
+                            <input id="compania" type="text" formControlName="compania" pInputText class="py-3 px-2 text-lg" autocomplete="off"> 
+                        </div>
+                        <div class="field">
+                            <label for="mensaje" class="font-medium">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" formControlName="mensaje" pInputTextarea rows="6" [autoResize]="true" class="py-3 px-2 text-lg" autocomplete="off"></textarea> 
+                            <small *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors?.['required']" class="p-error ml-2">El Mensaje es requerido.</small>
+                            <small *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors?.['maxlength']" class="p-error ml-2">El Mensaje NO debe tener más de {{ contactForm.get('mensaje')?.errors?.['maxlength']?.requiredLength}} caractéres.</small>
+                        </div>
+                        <button type="submit" [disabled]="contactForm.invalid" pButton pRipple label="Send Message" icon="pi pi-send" class="w-auto"></button>
+                    </div>
+                </div>
+                <div class="col-12 md:col-6 bg-no-repeat bg-right-bottom" style="background-image: url('assets/images/blocks/contact/contact-1.png')">
+                    <div class="text-900 text-2xl font-medium mb-6">Be Unique Corporation</div>
+                    <div class="text-700 line-height-3 mb-6">Empresa <strong>100% Mexicana</strong> para el desarrollo de aplicaciones y sistemas, que agilicen los procesos y automatizar tareas recurrentes, aplicando lo más vanguardista de la tecnología. </div>
+                    <a class="inline-flex align-items-center text-blue-600 font-bold no-underline cursor-pointer">
+                        <span class="mr-3">View Address on Google Maps</span>
+                        <i class="pi pi-arrow-right"></i>
+                    </a>
+                    <ul class="list-none p-0 m-0 mt-6 text-700">
+                        <li class="flex align-items-center mb-3">
+                            <i class="pi pi-phone mr-2"></i>
+                            <span>+52 811 778 5387</span>
+                        </li>
+                        <li class="flex align-items-center mb-3">
+                            <i class="pi pi-twitter mr-2"></i>
+                            <span>@BeUniqueCorp</span>
+                        </li>
+                        <li class="flex align-items-center">
+                            <i class="pi pi-inbox mr-2"></i>
+                            <span>contacto@beuniquecorp.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </form>
+</div>
+

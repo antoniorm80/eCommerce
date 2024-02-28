@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="header-content-wrapper">
+        <div class="header-filename">
+            <span>{{ fileName }}</span>
+        </div>
+        <div class="header-page-indicator">    
+            <span class="header-page-indicator-current">{{ currentPage }}</span>
+            <span class="header-page-indicator-separator">/</span>
+            <span class="header-page-indicator-total">{{ totalPages }}</span>
+        </div>
+        <div class="header-pdf-controls">
+            <p-button 
+                class="header-btn" 
+                icon="pi pi-search-plus" 
+                [rounded]="true" [text]="true" [raised]="true"
+                (onClick)="zoom('increment')"
+                [disabled]="zoomAmt >= zoomMax"
+                ></p-button>
+            <p-button 
+                class="header-btn" 
+                icon="pi pi-search-minus" 
+                [rounded]="true" [text]="true" [raised]="true"                
+                severity="secondary"
+                (onClick)="zoom('decrement')"
+              
+                ></p-button>
+            <p-button 
+                class="header-btn" 
+                icon="pi pi-print" 
+                [rounded]="true" [text]="true" [raised]="true"
+                severity="warning" (onClick)="onPrint($event)"></p-button>
+            <p-button class="header-btn" icon="pi pi-download" [rounded]="true" [text]="true" [raised]="true"
+                severity="help" (onClick)="onDownload($event)"></p-button>
+        </div>
+    </div>
+</div>

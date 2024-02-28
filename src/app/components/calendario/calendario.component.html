@@ -1,0 +1,74 @@
+<div class="surface-card p-4 shadow-2 border-round">
+    <div class="text-3xl font-medium text-900 mb-3" (click)="toggleWeekends()">Calendario</div>
+    <!-- <div class="font-medium text-500 mb-3">Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.
+        <button (click)="toggleWeekends()">toggle weekends</button>
+    </div> -->
+    <div style="height: 800px" class="border-2 border-dashed surface-border flex align-items-center justify-content-center">        
+        <div class="p-4 border-round-sm font-normal w-6">
+            <full-calendar [options]="calendarOptions()" >
+                <ng-template #eventContent let-arg>
+                    <b> {{ arg.timeText }}</b>&nbsp;
+                    <i> {{ arg.event.title }}</i>
+                    
+                </ng-template>
+            </full-calendar>
+        </div>        
+    </div>
+</div>
+
+<!-- <div class="container">
+    <button *ngIf="!clicked" (click)="surprise()">🎊  Surprise  🎉</button>       
+</div> -->
+<!-- <canvas id="canvas" width="600" height="650" style="outline: 1px solid red"></canvas>     -->
+
+
+<!-- <button pButton pRipple label="Display" (click)="visible4 = true"></button> -->
+
+<p-dialog [(visible)]="visible4" appendTo="body" [modal]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '30vw'}" header="Agregar Evento" [draggable]="false" [resizable]="false">
+    <div class="border-bottom-1 surface-border">
+        <ng-template pTemplate="header">
+            <div class="flex flex-column gap-2">
+                <h1 class="m-0 text-900 font-semibold text-xl line-height-3">Agregar Evento</h1>
+            </div>
+        </ng-template>
+    </div>
+   
+    <form class="flex flex-column gap-3 mt-3">
+        <div>
+            <label for="cardholder" class="block mb-1 text-color text-base">Usuario</label>
+            <span class="p-input-icon-left w-full">
+                <i class="pi pi-user"></i>
+                <input name="cardholder" type="text" class="w-full" id="cardholder" pInputText value="{{ usuario}}" disabled/>
+            </span>
+        </div>
+        <div>
+            <label for="credit-card" class="block mb-1 text-color text-base">Título</label>
+            <span class="p-input-icon-left w-full">
+                <i class="pi pi-pencil"></i>
+                <input name="cc" type="text" class="w-full" id="credit-card" pInputText placeholder="typing here..." value="{{titleEvento}}"/>
+            </span>
+        </div>
+        <div class="flex gap-3">
+            <div class="w-full">
+                <label for="cvc" class="block mb-1 text-color text-base">Fecha Inicial</label>
+                <span class="p-input-icon-left w-full">
+                    <i class="pi pi-calendar"></i>
+                    <input name="cvc" type="date" [(ngModel)]="cvc" class="w-full" id="cvc" pInputText pKeyFilter="int" value="{{fecha}}"/>
+                </span>
+            </div>
+            <div class="w-full">
+                <label for="expiration" class="block mb-1 text-color text-base">Fecha Final</label>
+                <span class="p-input-icon-left w-full">
+                    <i class="pi pi-calendar"></i>
+                    <input name="exp" type="date" [(ngModel)]="expiration" class="w-full" id="expiration" pInputText value="{{fecha}}"/>
+                </span>
+            </div>
+        </div>
+    </form>
+    <ng-template pTemplate="footer">
+        <div class="flex gap-3 justify-content-end border-top-1 surface-border pt-5">
+            <button pButton pRipple label="Cancel" (click)="visible4 = false" class="p-button-text"></button>
+            <button pButton pRipple label="Update" (click)="visible4 = false" class="p-button-rounded"></button>
+        </div>
+    </ng-template>
+</p-dialog>

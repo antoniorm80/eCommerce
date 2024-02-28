@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bc64548e-1ce1-4409-a2ed-bf169ca5cf20/resourceGroups/RG-Angular-21Nov23/providers/Microsoft.Web/sites/ecangular",
+    "appService.deploySubpath": "dist"
+}

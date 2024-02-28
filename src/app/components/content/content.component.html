@@ -1,0 +1,182 @@
+<div class="relative p-8 overflow-hidden">
+    <img src="assets/images/blocks/hero/hero-3.jpg" alt="Image" class="absolute top-0 left-0 w-auto h-full block md:w-full">
+
+    <div class="text-center my-6 relative">
+        <div class="text-6xl text-white font-bold mb-1">The Platform For</div>
+        <div class="text-6xl text-primary font-bold mb-4">Today's Generation</div>
+        <p class="mt-0 mb-4 line-height-3 text-center mx-auto text-white" style="max-width:500px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <button pButton pRipple label="Learn More" type="button"></button>
+
+        <p class="text-sm mt-4 mb-4 line-height-3 text-white">Available for MacOS, Web and Google accounts only</p>
+        <div class="flex justify-content-center align-items-center">
+            <a href="https://www.apple.com" class="text-white mr-3">
+                <i class="pi pi-apple text-2xl"></i>
+            </a>
+            <a href="https://play.google.com" class="text-white mr-3">
+                <i class="pi pi-android text-2xl"></i>
+            </a>
+            <a href="https://www.facebook.com" class="text-white">
+                <i class="pi pi-facebook text-2xl"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div class="grid">
+        <div class="col-12 md:col-4 flex flex-column align-items-center mb-3 md:mb-0">
+            <span class="inline-flex align-items-center justify-content-center bg-blue-500 border-circle w-3rem h-3rem mb-4">
+                <i class="pi pi-arrow-right text-white text-2xl"></i>
+            </span>
+            <span class="text-900 text-xl font-medium mb-4">Pay Later in 30 Days</span>
+            <p class="text-600 line-height-3 py-0 m-0 px-3">Ullamcorper sit amet risus nullam eget felis eget nunc.</p>
+        </div>
+        <div class="col-12 md:col-4 flex flex-column align-items-center mb-3 md:mb-0">
+            <span class="inline-flex align-items-center justify-content-center bg-cyan-500 border-circle w-3rem h-3rem mb-4">
+                <i class="pi pi-shopping-cart text-white text-2xl"></i>
+            </span>
+            <span class="text-900 text-xl font-medium mb-4">Free Shipping</span>
+            <p class="text-600 line-height-3 py-0 m-0 px-3">Ullamcorper sit amet risus nullam eget felis eget nunc.</p>
+        </div>
+        <div class="col-12 md:col-4 flex flex-column align-items-center">
+            <span class="inline-flex align-items-center justify-content-center bg-orange-500 border-circle w-3rem h-3rem mb-4">
+                <i class="pi pi-shield text-white text-2xl"></i>
+            </span>
+            <span class="text-900 text-xl font-medium mb-4">Secure Payment</span>
+            <p class="text-600 line-height-3 py-0 m-0 px-3">Ullamcorper sit amet risus nullam eget felis eget nunc.</p>
+        </div>
+    </div>
+</div>
+
+<div class="surface-section text-center px-4 py-8 md:px-6 lg:px-8">
+    <div class="bg-blue-50 text-blue-600 font-bold border-round px-2 py-1 mx-auto mb-3" style="max-width: 350px">
+        🔥&nbsp;3,907 businesses already subscribed</div>
+    <div class="text-2xl text-900 font-bold mb-3">Subscribe to our newsletter today</div>
+    <p class="text-600 line-height-3 mb-6">Join our community to receieve the latest updates and special promotions.
+    </p>
+
+    <div class="flex align-items-center justify-content-center">
+        <input pInputText placeholder="Enter your email" class="p-3 border-noround border-round-left" style="min-width: 250px">
+        <button pButton pRipple icon="pi pi-chevron-right" class="border-noround border-round-right p-3 w-auto"></button>
+    </div>
+</div>
+
+
+<div class="surface-ground text-center px-0 sm:px-4 py-8 md:px-6 lg:px-8">
+    <p-carousel [value]="company">
+        <ng-template let-person pTemplate="item">
+            <div class="flex justify-content-center">
+                <div class="surface-card shadow-2 px-2 md:px-6 py-5 border-round mb-4 text-900 text-2xl line-highlight-3"
+                    style="max-width: 600px">{{person.text}}</div>
+            </div>
+
+            <img src="assets/images/blocks/testimonial/testimonials-{{person.image}}.png" width="56" height="56" [alt]="person.name" class="mb-3" />
+            <div class="text-900 font-bold line-height-3">{{person.name}}</div>
+            <div class="text-600 line-height-3 mb-4">Company Title</div>
+        </ng-template>
+    </p-carousel>
+</div>
+
+<div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div class="text-center font-bold text-900 text-5xl mb-3">The Team</div>
+    <div class="text-center text-xl line-height-3 text-600 mb-6">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    <div class="grid">
+        <div class="col-12 md:col-4 text-center mb-5">
+            <img src="assets/images/blocks/avatars/circle-big/avatar-f-1.png" class="mb-3" />
+            <div class="text-xl text-900 font-medium mb-3">Annette Black</div>
+            <div class="text-blue-600 text-xl mb-3">Software Developer</div>
+            <div class="inline-flex align-items-center">
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-twitter text-xl"></i>
+                </a>
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-github text-xl"></i>
+                </a>
+                <a class="text-600 cursor-pointer">
+                    <i class="pi pi-facebook text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 md:col-4 text-center mb-5">
+            <img src="assets/images/blocks/avatars/circle-big/avatar-f-2.png" class="mb-3" />
+            <div class="text-xl text-900 font-medium mb-3">Leslie Alexander</div>
+            <div class="text-blue-600 text-xl mb-3">Software Tester</div>
+            <div class="inline-flex align-items-center">
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-twitter text-xl"></i>
+                </a>
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-github text-xl"></i>
+                </a>
+                <a class="text-600 cursor-pointer">
+                    <i class="pi pi-facebook text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 md:col-4 text-center mb-5">
+            <img src="assets/images/blocks/avatars/circle-big/avatar-m-1.png" class="mb-3" />
+            <div class="text-xl text-900 font-medium mb-3">Ralph Edward</div>
+            <div class="text-blue-600 text-xl mb-3">UI/UX Designer</div>
+            <div class="inline-flex align-items-center">
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-twitter text-xl"></i>
+                </a>
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-github text-xl"></i>
+                </a>
+                <a class="text-600 cursor-pointer">
+                    <i class="pi pi-facebook text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 md:col-4 text-center mb-5">
+            <img src="assets/images/blocks/avatars/circle-big/avatar-m-2.png" class="mb-3" />
+            <div class="text-xl text-900 font-medium mb-3">Robert Fox</div>
+            <div class="text-blue-600 text-xl mb-3">Software Developer</div>
+            <div class="inline-flex align-items-center">
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-twitter text-xl"></i>
+                </a>
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-github text-xl"></i>
+                </a>
+                <a class="text-600 cursor-pointer">
+                    <i class="pi pi-facebook text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 md:col-4 text-center mb-5">
+            <img src="assets/images/blocks/avatars/circle-big/avatar-m-3.png" class="mb-3" />
+            <div class="text-xl text-900 font-medium mb-3">Albert Flores</div>
+            <div class="text-blue-600 text-xl mb-3">Team Leader</div>
+            <div class="inline-flex align-items-center">
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-twitter text-xl"></i>
+                </a>
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-github text-xl"></i>
+                </a>
+                <a class="text-600 cursor-pointer">
+                    <i class="pi pi-facebook text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 md:col-4 text-center mb-0 md:mb-5">
+            <img src="assets/images/blocks/avatars/circle-big/avatar-f-3.png" class="mb-3" />
+            <div class="text-xl text-900 font-medium mb-3">Esther Howard Black</div>
+            <div class="text-blue-600 text-xl mb-3">Project Manager</div>
+            <div class="inline-flex align-items-center">
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-twitter text-xl"></i>
+                </a>
+                <a class="mr-3 text-600 cursor-pointer">
+                    <i class="pi pi-github text-xl"></i>
+                </a>
+                <a class="text-600 cursor-pointer">
+                    <i class="pi pi-facebook text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div> 
